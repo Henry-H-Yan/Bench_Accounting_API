@@ -3,8 +3,13 @@
 Results and different features (with RegEx cleanup)
 
 _________________________ Total Balance _________________________
+
+
 Total Balance : 18377.166
+
 _________________________ Vendor Names _________________________
+
+
 SHAW CABLESYSTEMS CALGARY AB
 BLACK TOP CABS VANCOUVER BC
 GUILT  CO VANCOUVER BC
