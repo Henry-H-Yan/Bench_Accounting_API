@@ -5,6 +5,11 @@ import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 
+/**
+ * Built using Jersey, a RESTful Web Services in Java
+ * @author henry-yan
+ *
+ */
 public class MainClass {
 
 	/**
@@ -14,7 +19,7 @@ public class MainClass {
 	
 		try {
 			
-			System.out.println("henry");
+			System.out.println("Henry's API for Bench Engineering ");
 			GlobalDataClass.DeleteFileData();
 			// Create a client to read json Data
 			Client client = Client.create();
@@ -41,7 +46,7 @@ public class MainClass {
 					 */
 					if (response.getStatus() != 200) {
 						throw new RuntimeException(
-								"Failed : HTTP error code : "
+								"Failed : HTTP Error code : "
 										+ response.getStatus());
 					}
 					/*
@@ -71,14 +76,14 @@ public class MainClass {
 						 * as payment Category
 						 */
 						if (_Ledger.equals("")) {
-							_Ledger = "Payment_Category";
+							_Ledger = "Ledger Not Specified (no name provided)";
 						}
 						/*
 						 * Insert total data into a transaction Arraylist
 						 */
 						GlobalDataClass.InsertTransaction(_Date, _Ledger,
 								_Amount, _Company);
-						/*
+						/* additional features
 						 * Add data to Expense Category List
 						 */
 						GlobalDataClass.AddExpCat(_Ledger,
@@ -91,15 +96,13 @@ public class MainClass {
 					}
 				} else {
 					// System.out.println("End");
-					/*
-					 * Break if not exist
-					 */
+					
 					break;
 				}
 
 			}
 			GlobalDataClass
-					.SaveToFile("######################## Total Balance ##########################");
+					.SaveToFile("_________________________ Total Balance _________________________");
 
 			GlobalDataClass.CalculateTotalBalance();
 
@@ -115,7 +118,8 @@ public class MainClass {
 				 * Replace non- capital character, numeric character
 				 */
 				String name = GlobalDataClass._transactions.get(i)
-						.get_Company().replaceAll("[^A-Z ]", "");
+						.get_Company().replaceAll("[^A-Z ]", "")
+						 ;
 	
 				GlobalDataClass.SaveToFile(name);
 
