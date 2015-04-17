@@ -1,34 +1,47 @@
 
 public class Transactions {
-	
+
 	String _Date;
 	String _Ledger;
 	Float _Amount;
 	String _Company;
-	
-	
+
+
 	// getter setter for all
-	
+
 	/**
 	 *  Used to 
 	 * @param other
 	 * @return
 	 */
-	
+
 	public Transactions(String d, String l, Float a, String c){
 		_Date= d;
 		_Ledger=l;
 		_Amount=a;
 		_Company=c;
-		
+
+	}
+
+	@Override
+	public int hashCode() {
+		return (int) (_Date.hashCode() * 17 + _Ledger.hashCode()*7+ _Amount * 13 + _Company.hashCode()* 31);
+
 	}
 	
-	public boolean equals(Transactions other){
+	@Override
+	public boolean equals(Object obj){
+
+		if (!(obj instanceof Transactions))  return false;
+		if (obj == this)	   return true;
+
+		Transactions other = (Transactions) obj;
+
 		return this._Date.equals(other._Date) &&
 				this._Ledger.equals(other._Date) &&
 				this._Amount.equals(other._Amount)
 				&& this._Company.equals(other._Company);
-		
+
 	}
 	public String get_Date() {
 		return _Date;
@@ -54,5 +67,5 @@ public class Transactions {
 	public void set_Company(String _Company) {
 		this._Company = _Company;
 	}
-	
+
 }

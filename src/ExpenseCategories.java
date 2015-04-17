@@ -10,6 +10,7 @@ public class ExpenseCategories {
 	      return (int) (_Cat.hashCode() * 17 + _expense * 71);
 	      
 	    }
+   @Override
 	  public boolean equals(Object obj) {
 	       if (!(obj instanceof ExpenseCategories))
 	            return false;
