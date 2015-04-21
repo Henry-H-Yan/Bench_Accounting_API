@@ -18,6 +18,8 @@ public class MainClass {
 	public static void main(String[] args) {
 	
 		try {
+			String a="a";
+			int t= a.length();
 			
 			System.out.println("Henry's API for Bench Engineering ");
 			GlobalDataClass.DeleteFileData();
